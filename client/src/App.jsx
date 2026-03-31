@@ -51,7 +51,7 @@ const App = () => {
              
               
         </Route>
-        <Route path='/view/:resumeId' element={<Preview/>}  />
+        <Route path='view/:resumeId' element={<Preview/>}  />
         <Route path='login' element={<Login/>}  />
       </Routes>
     </>
