@@ -5,7 +5,7 @@ import connectDB from './config/db.js';
 import userRouter from './routes/userRoute.js';
 import resumeRouter from './routes/resumeRouter.js';
 import aiRouter from './routes/aiRoute.js';
-
+import path from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,7 +26,7 @@ app.use('/api/resume',resumeRouter)
 
 app.use('/api/ai',aiRouter)
 
-const path = require("path");
+// const path = require("path");
 
 // تقديم ملفات React
 app.use(express.static(path.join(__dirname, "client/build")));
