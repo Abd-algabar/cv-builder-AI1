@@ -26,6 +26,16 @@ app.use('/api/resume',resumeRouter)
 
 app.use('/api/ai',aiRouter)
 
+const path = require("path");
+
+// تقديم ملفات React
+app.use(express.static(path.join(__dirname, "client/build")));
+
+// ⚠️ هذا لازم يكون بعد كل API routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
